@@ -92,6 +92,7 @@ BEGIN_MESSAGE_MAP(CcalculatorDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_plus_or_minus, &CcalculatorDlg::OnBnClickedplusorminus)
 	ON_BN_CLICKED(IDC_signofevolution, &CcalculatorDlg::OnBnClickedsignofevolution)
 	ON_BN_CLICKED(IDC_X2, &CcalculatorDlg::OnBnClickedX2)
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 
@@ -458,4 +459,12 @@ void CcalculatorDlg::OnBnClickedX2()
 	UpdateData(false);
 
 
+}
+
+
+void CcalculatorDlg::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	TRACE("X=%d,Y=%d\n",point.x,point.y);
+	CDialogEx::OnMouseMove(nFlags, point);
 }

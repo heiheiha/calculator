@@ -58,4 +58,5 @@ public:
 	afx_msg void OnBnClickedplusorminus();
 	afx_msg void OnBnClickedsignofevolution();
 	afx_msg void OnBnClickedX2();
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 };

@@ -1,12 +1,15 @@
-﻿生成启动时间为 2016/1/2 14:20:25。
+﻿生成启动时间为 2016/1/2 14:32:42。
      1>项目“E:\calculator\calculator\calculator.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\calculator.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         c:\Users\lenovo\Desktop\新建文件夹 (2)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\calculator.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt calculatorDlg.cpp
+         c:\Users\lenovo\Desktop\新建文件夹 (2)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\calculator.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt calculator.cpp calculatorDlg.cpp
          calculatorDlg.cpp
-     1>e:\calculator\calculator\calculatordlg.cpp(283): warning C4010: 单行注释包含行继续符
+     1>e:\calculator\calculator\calculatordlg.cpp(284): warning C4010: 单行注释包含行继续符
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         calculator.cpp
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -30,4 +33,4 @@
 
 生成成功。
 
-已用时间 00:00:01.81
+已用时间 00:00:02.79
