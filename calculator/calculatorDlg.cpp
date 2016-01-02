@@ -456,4 +456,6 @@ void CcalculatorDlg::OnBnClickedX2()
 	QWER.Right(1)=="0";
 	QWER.Delete(QWER.GetAllocLength()-4,7);
 	UpdateData(false);
+
+
 }
