@@ -1,15 +1,29 @@
-﻿生成启动时间为 2016/1/2 14:32:42。
+﻿生成启动时间为 2016/1/3 11:17:03。
      1>项目“E:\calculator\calculator\calculator.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\calculator.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         c:\Users\lenovo\Desktop\新建文件夹 (2)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\calculator.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt calculator.cpp calculatorDlg.cpp
+         c:\Users\lenovo\Desktop\新建文件夹 (2)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\calculator.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt calculatorDlg.cpp
          calculatorDlg.cpp
-     1>e:\calculator\calculator\calculatordlg.cpp(284): warning C4010: 单行注释包含行继续符
-         正在生成代码...
-         正在跳过...(未检测到相关更改)
-         calculator.cpp
+     1>e:\calculator\calculator\calculatordlg.cpp(291): warning C4010: 单行注释包含行继续符
+     1>e:\calculator\calculator\calculatordlg.cpp(495): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(501): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(501): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(501): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(501): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(510): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(510): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(517): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(517): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(526): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(526): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(533): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(533): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(542): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(542): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(549): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>e:\calculator\calculator\calculatordlg.cpp(549): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -33,4 +47,4 @@
 
 生成成功。
 
-已用时间 00:00:02.79
+已用时间 00:00:01.66

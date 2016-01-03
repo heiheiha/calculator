@@ -22,7 +22,8 @@ public:
 // 实现
 protected:
 	HICON m_hIcon;
-
+	double x,y,secag,hag,minag;
+	int color;
 	// 生成的消息映射函数
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
@@ -59,4 +60,5 @@ public:
 	afx_msg void OnBnClickedsignofevolution();
 	afx_msg void OnBnClickedX2();
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
