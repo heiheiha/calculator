@@ -55,6 +55,9 @@ END_MESSAGE_MAP()
 CcalculatorDlg::CcalculatorDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CcalculatorDlg::IDD, pParent)
 	, QWER(_T(""))
+	, m_h(_T(""))
+	, m_m(_T(""))
+	, m_s(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -63,6 +66,9 @@ void CcalculatorDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Text(pDX, IDC_EDIT1, QWER);
+	DDX_Text(pDX, IDC_EDIT2, m_h);
+	DDX_Text(pDX, IDC_EDIT3, m_m);
+	DDX_Text(pDX, IDC_EDIT4, m_s);
 }
 
 BEGIN_MESSAGE_MAP(CcalculatorDlg, CDialogEx)
@@ -96,6 +102,7 @@ BEGIN_MESSAGE_MAP(CcalculatorDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_X2, &CcalculatorDlg::OnBnClickedX2)
 	ON_WM_MOUSEMOVE()
 	ON_WM_TIMER()
+	ON_BN_CLICKED(IDC_Time, &CcalculatorDlg::OnBnClickedTime)
 END_MESSAGE_MAP()
 
 
@@ -550,4 +557,17 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 	if(hag>=6.2831852)
 	hag=-3.1415926/21600;
 	CDialogEx::OnTimer(nIDEvent);
+}
+
+
+void CcalculatorDlg::OnBnClickedTime()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	/*
+	UpdateData(true);
+	hag=m_h*(3.1415926/6)+m_m*(3.1415926/360)+m_s*(3.1415926/21600);
+	minag=m_m*(3.1415926/30)+m_s*(3.1415926/1800);
+	secag=m_s*(3.1415926/30);
+	SetTimer(1,1000,NULL);
+	*/
 }

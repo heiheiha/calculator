@@ -61,4 +61,8 @@ public:
 	afx_msg void OnBnClickedX2();
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnBnClickedTime();
+	CString m_h;
+	CString m_m;
+	CString m_s;
 };
