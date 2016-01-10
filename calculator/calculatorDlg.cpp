@@ -138,7 +138,7 @@ BOOL CcalculatorDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
-	SetTimer(1,10,NULL);
+	SetTimer(1,1000,NULL);
 	secag=-0.05;
 	minag=-0.05;
 	hag=-0.05;
@@ -487,73 +487,74 @@ void CcalculatorDlg::OnMouseMove(UINT nFlags, CPoint point)
 void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	CClientDC dc(this);
-	dc.SetWindowOrg(0-510,0-185);
+	CDC *pdc;
+	pdc=GetDC();
+	pdc->SetWindowOrg(0-510,0-185);
 	CPen *oldpen;
 	CPen groundpen(PS_SOLID,4,RGB(255,255,255));
 	CPen pen(PS_SOLID,3,RGB(color,color,color));
-	oldpen=dc.SelectObject(&pen);
-	dc.Ellipse(-100,100,100,-100);
+	oldpen=pdc->SelectObject(&pen);
+	pdc->Ellipse(-100,100,100,-100);
 	CPen ppen(PS_SOLID,3,RGB(color,color,color));
-	oldpen=dc.SelectObject(&ppen);
-	dc.Ellipse(-1,-1,1,1);
-	dc.TextOutW(90,-8,L"3");
-	dc.TextOutW(-98,-8,L"9");
-	dc.TextOutW(-8,-99.5,L"12");
-	dc.TextOutW(-2,83,L"6");
+	oldpen=pdc->SelectObject(&ppen);
+	pdc->Ellipse(-1,-1,1,1);
+	pdc->TextOutW(90,-8,L"3");
+	pdc->TextOutW(-98,-8,L"9");
+	pdc->TextOutW(-8,-99.5,L"12");
+	pdc->TextOutW(-2,83,L"6");
 	for(int i=0;i<12;i++)
 	{
 		double l=90,ag=i*3.1415926/6;
 		double a=l*sin(ag)+1,b=-l*cos(ag)+1,c=l*sin(ag)-1,d=-l*cos(ag)-1;
-		dc.Ellipse(a,b,c,d);
+		pdc->Ellipse(a,b,c,d);
 	}
 
 
     double L1=70,L2=60,L3=50;          //miaozhen
-	oldpen=dc.SelectObject(&groundpen);
+	oldpen=pdc->SelectObject(&groundpen);
 	x=L1*sin(secag);
 	y=-L1*cos(secag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	CPen secpen(PS_SOLID,2,RGB(150,150,150));
-	oldpen=dc.SelectObject(&secpen);
+	oldpen=pdc->SelectObject(&secpen);
 	secag=secag+3.1415926/30;
 	x=L1*sin(secag);
 	y=-L1*cos(secag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	if(secag>=6.2831852)
 		secag=-3.1415926/30;
 
 
-	oldpen=dc.SelectObject(&groundpen);//fenzhen
+	oldpen=pdc->SelectObject(&groundpen);//fenzhen
 	x=L2*sin(minag);
 	y=-L2*cos(minag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	CPen minpen(PS_SOLID,3,RGB(0,255,150));
-	oldpen=dc.SelectObject(&minpen);
+	oldpen=pdc->SelectObject(&minpen);
 	minag=minag+3.1415926/1800;
 	x=L2*sin(minag);
 	y=-L2*cos(minag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	if(minag>=6.2831852)
 		minag=-3.1415926/1800;
 
 
-	oldpen=dc.SelectObject(&groundpen);//shizhen
+	oldpen=pdc->SelectObject(&groundpen);//shizhen
 	x=L3*sin(hag);
 	y=-L3*cos(hag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	CPen hpen(PS_SOLID,3,RGB(255,0,0));
-	oldpen=dc.SelectObject(&hpen);
+	oldpen=pdc->SelectObject(&hpen);
 	hag=hag+3.1415926/21600;
 	x=L3*sin(hag);
 	y=-L3*cos(hag);
-	dc.MoveTo(0,0);
-	dc.LineTo(x,y);
+	pdc->MoveTo(0,0);
+	pdc->LineTo(x,y);
 	if(hag>=6.2831852)
 	hag=-3.1415926/21600;
 	CDialogEx::OnTimer(nIDEvent);
