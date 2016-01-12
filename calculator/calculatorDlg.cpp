@@ -7,8 +7,8 @@
 #include "calculatorDlg.h"
 #include "afxdialogex.h"
 #include "iostream"
-#include "time.h"
-#include "cmath"
+//#include "time.h"
+#include "math.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -55,9 +55,9 @@ END_MESSAGE_MAP()
 CcalculatorDlg::CcalculatorDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CcalculatorDlg::IDD, pParent)
 	, QWER(_T(""))
-	, m_h(_T(""))
-	, m_m(_T(""))
-	, m_s(_T(""))
+	, h_h(0)
+	, h_m(0)
+	, h_s(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -66,9 +66,9 @@ void CcalculatorDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Text(pDX, IDC_EDIT1, QWER);
-	DDX_Text(pDX, IDC_EDIT2, m_h);
-	DDX_Text(pDX, IDC_EDIT3, m_m);
-	DDX_Text(pDX, IDC_EDIT4, m_s);
+	DDX_Text(pDX, IDC_EDIT2, h_h);
+	DDX_Text(pDX, IDC_EDIT3, h_m);
+	DDX_Text(pDX, IDC_EDIT4, h_s);
 }
 
 BEGIN_MESSAGE_MAP(CcalculatorDlg, CDialogEx)
@@ -492,11 +492,9 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 	pdc->SetWindowOrg(0-510,0-185);
 	CPen *oldpen;
 	CPen groundpen(PS_SOLID,4,RGB(255,255,255));
-	CPen pen(PS_SOLID,3,RGB(color,color,color));
+	CPen pen(PS_SOLID,3,RGB(255,0,0));
 	oldpen=pdc->SelectObject(&pen);
 	pdc->Ellipse(-100,100,100,-100);
-	CPen ppen(PS_SOLID,3,RGB(color,color,color));
-	oldpen=pdc->SelectObject(&ppen);
 	pdc->Ellipse(-1,-1,1,1);
 	pdc->TextOutW(90,-8,L"3");
 	pdc->TextOutW(-98,-8,L"9");
@@ -512,10 +510,6 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 
     double L1=70,L2=60,L3=50;          //miaozhen
 	oldpen=pdc->SelectObject(&groundpen);
-	x=L1*sin(secag);
-	y=-L1*cos(secag);
-	pdc->MoveTo(0,0);
-	pdc->LineTo(x,y);
 	CPen secpen(PS_SOLID,2,RGB(150,150,150));
 	oldpen=pdc->SelectObject(&secpen);
 	secag=secag+3.1415926/30;
@@ -523,15 +517,10 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 	y=-L1*cos(secag);
 	pdc->MoveTo(0,0);
 	pdc->LineTo(x,y);
-	if(secag>=6.2831852)
-		secag=-3.1415926/30;
+
 
 
 	oldpen=pdc->SelectObject(&groundpen);//fenzhen
-	x=L2*sin(minag);
-	y=-L2*cos(minag);
-	pdc->MoveTo(0,0);
-	pdc->LineTo(x,y);
 	CPen minpen(PS_SOLID,3,RGB(0,255,150));
 	oldpen=pdc->SelectObject(&minpen);
 	minag=minag+3.1415926/1800;
@@ -544,10 +533,6 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 
 
 	oldpen=pdc->SelectObject(&groundpen);//shizhen
-	x=L3*sin(hag);
-	y=-L3*cos(hag);
-	pdc->MoveTo(0,0);
-	pdc->LineTo(x,y);
 	CPen hpen(PS_SOLID,3,RGB(255,0,0));
 	oldpen=pdc->SelectObject(&hpen);
 	hag=hag+3.1415926/21600;
@@ -555,20 +540,15 @@ void CcalculatorDlg::OnTimer(UINT_PTR nIDEvent)
 	y=-L3*cos(hag);
 	pdc->MoveTo(0,0);
 	pdc->LineTo(x,y);
-	if(hag>=6.2831852)
-	hag=-3.1415926/21600;
-	CDialogEx::OnTimer(nIDEvent);
 }
 
 
 void CcalculatorDlg::OnBnClickedTime()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	/*
 	UpdateData(true);
-	hag=m_h*(3.1415926/6)+m_m*(3.1415926/360)+m_s*(3.1415926/21600);
-	minag=m_m*(3.1415926/30)+m_s*(3.1415926/1800);
-	secag=m_s*(3.1415926/30);
+	hag=h_h*(3.1415926/6)+h_m*(3.1415926/360)+h_s*(3.1415926/21600);
+	minag=h_m*(3.1415926/30)+h_s*(3.1415926/1800);
+	secag=h_s*(3.1415926/30);
 	SetTimer(1,1000,NULL);
-	*/
 }
